@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Landing Page Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">AI Landing Page Generator</h1>
+        <form id="landingPageForm" class="mt-4">
+            <div class="form-group">
+                <label for="imageUpload">Upload Product Image</label>
+                <input type="file" class="form-control-file" id="imageUpload" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="prompt">Enter Your Prompt</label>
+                <textarea class="form-control" id="prompt" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="brandColor">Select Brand Color</label>
+                <input type="color" class="form-control" id="brandColor" value="#000000">
+            </div>
+            <div class="form-group">
+                <label for="fontSelect">Select Font</label>
+                <select class="form-control" id="fontSelect">
+                    <option value="Arial">Arial</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Georgia">Georgia</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate Landing Page</button>
+        </form>
+        <div id="preview" class="mt-5">
+            <h2>Preview</h2>
+            <div id="previewContent" class="border p-3"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
